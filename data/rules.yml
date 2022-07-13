@@ -1,0 +1,34 @@
+version: "2.0"
+
+rules:
+- rule: oi false
+  condition:
+  - slot_was_set:
+    - retorno: false
+  steps:
+  - intent: greet
+  - action: utter_greet_false
+  - action: action_retorno
+
+- rule: oi true
+  condition:
+  - slot_was_set:
+    - retorno: true
+  steps:
+  - intent: greet
+  - action: utter_greet_true
+  
+- rule: tchau
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_restart_slot
+  - action: action_retorno
+
+- rule: mostrar slot
+  steps:
+  - intent: slot
+  - action: utter_slot
+
+
+

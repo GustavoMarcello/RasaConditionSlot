@@ -1,0 +1,51 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - oi
+    - eae
+    - bom dia
+    - salve
+    - olá
+    
+- intent: goodbye
+  examples: |
+    - tchau
+    - xau
+    - até mais
+    - adeus
+    - fui
+    - obrigado
+
+- intent: slot
+  examples: |
+    - valor do slot
+    - mostrar slot
+    - valor
+    - mostrar
+
+- intent: affirm
+  examples: |
+    - sim
+    - claro
+    - ctz
+    - com certeza
+    - isso
+    - positivo
+
+- intent: deny
+  examples: |
+    - não
+    - nunca
+    - negativo
+    - acho que não
+    - nem ferrando
+
+# - intent: cancelar_agendamento
+#   examples: |
+#     - cancelar agendamento [vacina] {"entity": "menu_entity", "value": "vacina", "slot": "menu_entity", "value": "vacina"}
+#     - cancelar agendamento [exame](menu_entity) {slot: "exame"}
+#     - cancelar agendamento [consulta](menu_entity)
+#     - cancelar agendamento {slot: "vacina"}
+
+

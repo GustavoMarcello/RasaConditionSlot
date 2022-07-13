@@ -1,0 +1,52 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - slot
+  - cancelar_agendamento
+
+slots:
+  nome:
+    type: text
+    initial_value: 'Gustavo'
+    influence_conversation: false
+  retorno:
+    type: bool
+    initial_value: true
+    influence_conversation: true
+#   menu_entity:
+#     type: text
+#     initial_value: Null
+#     influence_conversation: true
+
+# entities:
+# - menu_entity
+
+responses:
+  utter_greet_true:
+  - text: "Oi {nome}, verdadeiro"
+
+  utter_greet_false:
+  - text: "Bem vindo {nome}, falso"
+
+  utter_slot:
+  - text: |- 
+      Seus Slots são:
+      
+      Nome: {nome}
+      Retorno: {retorno}
+
+  utter_goodbye:
+  - text: "Até mais"
+
+actions:
+- action_retorno
+- action_restart_slot
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+

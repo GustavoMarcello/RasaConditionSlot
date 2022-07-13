@@ -1,0 +1,30 @@
+version: "2.0"
+
+stories:
+- story: oi false
+  steps:
+  - slot_was_set:
+    - retorno: false
+  - intent: greet
+  - action: utter_greet_false
+  - action: action_retorno
+
+- story: oi true
+  steps:
+  - slot_was_set:
+    - retorno: true
+  - intent: greet
+  - action: utter_greet_true
+
+- story: tchau
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_restart_slot
+  - action: action_retorno
+
+- story: ver slot
+  steps:
+  - intent: slot
+  - action: utter_slot
+
